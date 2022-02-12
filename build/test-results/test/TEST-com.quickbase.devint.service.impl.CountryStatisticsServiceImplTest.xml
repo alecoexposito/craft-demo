@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.quickbase.devint.service.impl.CountryStatisticsServiceImplTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2022-02-12T20:37:11" hostname="ALEJANDROE-L540" time="1.488">
+  <properties/>
+  <testcase name="listPopulationByCountryWhenDBThrowsExceptionTotalAndPopulationFromAPIAreReturned()" classname="com.quickbase.devint.service.impl.CountryStatisticsServiceImplTest" time="0.462"/>
+  <testcase name="listPopulationByCountryWhenOkCountriesAreNotRepeatedAndHaveDBPopulation()" classname="com.quickbase.devint.service.impl.CountryStatisticsServiceImplTest" time="0.007"/>
+  <testcase name="listPopulationByCountryWhenOkTotalIsCombined()" classname="com.quickbase.devint.service.impl.CountryStatisticsServiceImplTest" time="0.003"/>
+  <testcase name="listPopulationByCountryWhenDBDelayPopulationFromDBIsTaken()" classname="com.quickbase.devint.service.impl.CountryStatisticsServiceImplTest" time="1.013"/>
+  <system-out><![CDATA[2022-02-12 22:37:12.007 ERROR 37672 --- [onPool-worker-1] c.q.d.service.CountryStatisticsService   : error getting the countries from db
+
+java.util.concurrent.CompletionException: java.lang.RuntimeException: DB error
+	at java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:273) ~[na:1.8.0_322]
+	at java.util.concurrent.CompletableFuture.completeThrowable(CompletableFuture.java:280) ~[na:1.8.0_322]
+	at java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1606) [na:1.8.0_322]
+	at java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1596) [na:1.8.0_322]
+	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:289) ~[na:1.8.0_322]
+	at java.util.concurrent.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1056) ~[na:1.8.0_322]
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1692) ~[na:1.8.0_322]
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:175) ~[na:1.8.0_322]
+Caused by: java.lang.RuntimeException: DB error
+	at com.quickbase.devint.service.impl.CountryStatisticsServiceImpl.lambda$listPopulationByCountry$0(CountryStatisticsServiceImpl.java:43) ~[main/:na]
+	at java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1604) [na:1.8.0_322]
+	... 5 common frames omitted
+
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
